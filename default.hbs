@@ -16,7 +16,7 @@
     {{! Styles'n'Scripts }}
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -24,41 +24,61 @@
 </head>
 <body class="{{body_class}}">
 
-<div class="container">
-
-    <aside class="col-md-3 col-sm-3">
+  <div id="wrap">
+    <div class="container">
+      
       {{! The big featured header on the homepage, with the site logo and description }}
-      <header id="site-head">
-          <div class="vertical">
-              <div id="site-head-content" class="inner">
-                  {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-                  <a class="blog-title" href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
-                  <h2 class="blog-description">{{@blog.description}}</h2>
-              </div>
-          </div>
-      </header>
-    </aside>
-
-    {{! Everything else gets inserted here }}
-    {{{body}}}
-
-    <footer class="site-footer col-md-12 text-center">
-        <a class="subscribe fa fa-rss" href="{{@blog.url}}/rss/">
-            <span class="tooltip">Subscribe!</span>
-        </a>
-        <div class="inner">
-             <!-- <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section> -->
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://tryghost.org">Ghost</a></section>
+      <header id="site-head" class="row">
+        <div id="site-head-content" class="inner col-md-6 col-md-offset-4 col-sm-offset-4">
+          {{#if @blog.logo}}
+            <a id="blog-logo" href="{{@blog.url}}">
+              <img src="{{@blog.logo}}" alt="Blog Logo" />
+            </a>
+          {{/if}}
+          <a class="blog-title" href="{{@blog.url}}">
+            <h1>{{@blog.title}}</h1>
+          </a>
+          <h2 class="blog-description">{{@blog.description}}</h2>
         </div>
-    </footer>
-</div>
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+      </header>
+      
+      <aside class="col-md-3 col-sm-3">
+        <nav class="blog-menu">
+          <ul class="list-unstyled">
+            <li><a class="l-uppercase" href="/about">About</a></li>
+            <li><a class="l-uppercase" href="/contact">Contact</a></li>
+            <li><a class="subscribe l-uppercase" href="{{@blog.url}}/rss/">RSS feed</a></li>
+            <li><a class="l-uppercase" href="http://twitter.com/">Twitter</a></li>
+            <li><a class="l-uppercase" href="http://github.com/">Github</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/index.js"></script>
+      {{! The main content area on the homepage }}
+      <main class="content col-lg-5 col-md-6 col-sm-8 col-md-offset-1 col-sm-offset-1" role="main">
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+      </main>
+
+    </div>
+  </div>
+  
+  <footer id="site-footer">
+    <div class="container">
+      <div class="site-footer-inner text-center">
+        <!-- <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section> -->
+        <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://tryghost.org">Ghost</a></section>
+      </div>
+    </div>
+  </footer>
+  
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
+
+  {{! The main JavaScript file for Casper }}
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/assets/js/index.js"></script>
 
 </body>
 </html>
