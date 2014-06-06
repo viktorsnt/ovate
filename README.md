@@ -1,10 +1,10 @@
-# bold-water
+# Ovate
 
-A clean, simple and responsive [Ghost Theme](http://ghost.org) inspired by the ["Negative Space - Ghost Theme"](http://madeforghost.com/statics/negative-space/)
+A clean, simple and responsive [Ghost Theme](http://ghost.org).
 
-<a href="http://viktorsnt.github.io/bold-water-demo/" target="_blank">Demo</a>
+<a href="http://viktorsnt.github.io/ovate-demo/" target="_blank">Demo</a>
 
-[Download](https://github.com/viktorsnt/bold-water/archive/master.zip)
+[Download](https://github.com/viktorsnt/ovate/archive/master.zip)
 
 ### Getting Started
 
